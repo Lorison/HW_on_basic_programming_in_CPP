@@ -1,4 +1,4 @@
-# Ignore compiled files
+# Compiled files
 *.exe
 *.o
 *.obj
@@ -6,6 +6,11 @@
 *.pdb
 *.ilk
 *.log
+
+# Build directories
+build/
+bin/
+cmake-build-*/
 
 # VSCode user-specific files
 .vscode/settings.json
@@ -15,10 +20,16 @@
 .vscode/*.sdf
 .vscode/*.opendb
 
-# Build directories
-build/
-bin/
-cmake-build-*/
+# Visual Studio files
+*.suo
+*.user
+*.userosscache
+*.VC.db
+*.VC.locals
+*.VC.opendb
+[Oo]bj/
+[Db]ebug/
+[Dr]elease/
 
 # OS generated files
 .DS_Store
