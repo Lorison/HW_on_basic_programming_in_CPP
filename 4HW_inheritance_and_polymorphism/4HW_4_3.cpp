@@ -59,7 +59,8 @@ namespace Geometry {
 
     public:
         Triangle(double a, double b, double c, double A, double B, double C)
-            : Figure("Треугольник", 3), a(a), b(b), c(c), A(A), B(B), C(C) {}
+            : Figure("Треугольник", 3), a(a), b(b), c(c), A(A), B(B), C(C) {
+        }
 
         bool check() const override {
             return abs(A + B + C - 180.0) < EPSILON;
@@ -96,8 +97,8 @@ namespace Geometry {
 
         bool check() const override {
             return Triangle::check() &&
-                   abs(a - c) < EPSILON &&
-                   abs(A - C) < EPSILON;
+                abs(a - c) < EPSILON &&
+                abs(A - C) < EPSILON;
         }
     };
 
@@ -111,8 +112,8 @@ namespace Geometry {
 
         bool check() const override {
             return Triangle::check() &&
-                   abs(a - b) < EPSILON &&
-                   abs(b - c) < EPSILON;
+                abs(a - b) < EPSILON &&
+                abs(b - c) < EPSILON;
         }
     };
 
@@ -133,7 +134,8 @@ namespace Geometry {
     public:
         Quadrangle(double a, double b, double c, double d, double A, double B, double C, double D)
             : Figure("Четырёхугольник", 4),
-              a(a), b(b), c(c), d(d), A(A), B(B), C(C), D(D) {}
+            a(a), b(b), c(c), d(d), A(A), B(B), C(C), D(D) {
+        }
 
         bool check() const override {
             return abs(A + B + C + D - 360.0) < EPSILON;
@@ -157,12 +159,12 @@ namespace Geometry {
 
         bool check() const override {
             return Quadrangle::check() &&
-                   abs(a - c) < EPSILON && abs(b - d) < EPSILON &&
-                   abs(A - C) < EPSILON && abs(B - D) < EPSILON;
+                abs(a - c) < EPSILON && abs(b - d) < EPSILON &&
+                abs(A - C) < EPSILON && abs(B - D) < EPSILON;
         }
     };
 
-    // Прямоугольник 
+    // Прямоугольник ← Переименовано во избежание конфликта с Windows API
     class RectangleShape : public Parallelogram {
     public:
         RectangleShape(double a, double b)
@@ -172,8 +174,8 @@ namespace Geometry {
 
         bool check() const override {
             return Parallelogram::check() &&
-                   abs(A - 90.0) < EPSILON &&
-                   abs(B - 90.0) < EPSILON;
+                abs(A - 90.0) < EPSILON &&
+                abs(B - 90.0) < EPSILON;
         }
     };
 
@@ -187,7 +189,7 @@ namespace Geometry {
 
         bool check() const override {
             return RectangleShape::check() &&
-                   abs(a - b) < EPSILON;
+                abs(a - b) < EPSILON;
         }
     };
 
@@ -201,12 +203,12 @@ namespace Geometry {
 
         bool check() const override {
             return Parallelogram::check() &&
-                   abs(a - b) < EPSILON;
+                abs(a - b) < EPSILON;
         }
     };
 }
 
-// ========== main функция ==========
+// ========== Основная функция ==========
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
@@ -215,14 +217,14 @@ int main() {
     using namespace Geometry;
 
     // Создаем фигуры
-    Figure figure;
+    Figure figure; // Теперь работает благодаря конструктору по умолчанию
     Triangle triangle(10, 20, 30, 50, 60, 70);
     RightTriangle right_triangle(10, 20, 30, 50, 40);
     IsoscelesTriangle isosceles_triangle(10, 20, 50, 60);
     EquilateralTriangle equilateral_triangle(30);
 
     Quadrangle quadrangle(10, 20, 30, 40, 50, 60, 70, 80);
-    RectangleShape rectangle(10, 20);
+    RectangleShape rectangle(10, 20); // Используем RectangleShape
     Square square(20);
     Parallelogram parallelogram(20, 30, 30, 40);
     Rhombus rhombus(30, 30, 40);
