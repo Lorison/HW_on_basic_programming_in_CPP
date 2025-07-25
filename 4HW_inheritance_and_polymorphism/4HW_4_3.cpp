@@ -1,3 +1,4 @@
+#define NOMINMAX
 #include <iostream>
 #include <clocale>
 #include <windows.h>
@@ -26,8 +27,8 @@ namespace Geometry {
         // Основной конструктор
         Figure(const char* name, int sides) : name(name), sides_count(sides) {}
 
-        // Конструктор по умолчанию — исправление ошибки: no matching function for call to 'Figure::Figure()'
-        Figure() : Figure("Фигура", 0) {}
+        // Конструктор по умолчанию
+        Figure() : name("Фигура"), sides_count(0) {}
 
         virtual ~Figure() = default;
 
@@ -161,7 +162,7 @@ namespace Geometry {
         }
     };
 
-    // Прямоугольник ← Переименовано во избежание конфликта с Windows API
+    // Прямоугольник 
     class RectangleShape : public Parallelogram {
     public:
         RectangleShape(double a, double b)
@@ -205,7 +206,7 @@ namespace Geometry {
     };
 }
 
-// ========== Основная функция ==========
+// ========== main функция ==========
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
@@ -214,14 +215,14 @@ int main() {
     using namespace Geometry;
 
     // Создаем фигуры
-    Figure figure; // Теперь работает благодаря конструктору по умолчанию
+    Figure figure;
     Triangle triangle(10, 20, 30, 50, 60, 70);
     RightTriangle right_triangle(10, 20, 30, 50, 40);
     IsoscelesTriangle isosceles_triangle(10, 20, 50, 60);
     EquilateralTriangle equilateral_triangle(30);
 
     Quadrangle quadrangle(10, 20, 30, 40, 50, 60, 70, 80);
-    RectangleShape rectangle(10, 20); // Используем RectangleShape
+    RectangleShape rectangle(10, 20);
     Square square(20);
     Parallelogram parallelogram(20, 30, 30, 40);
     Rhombus rhombus(30, 30, 40);

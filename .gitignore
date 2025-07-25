@@ -21,6 +21,7 @@ cmake-build-*/
 .vscode/*.opendb
 
 # Visual Studio files
+.vs/
 *.suo
 *.user
 *.userosscache
