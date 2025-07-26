@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Shapes Project",
+            "command": "g++",
+            "type": "shell",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "main.cpp",
+                "Figure.cpp",
+                "Triangle.cpp",
+                "RightTriangle.cpp",
+                "IsoscelesTriangle.cpp",
+                "EquilateralTriangle.cpp",
+                "Quadrangle.cpp",
+                "Parallelogram.cpp",
+                "RectangleShape.cpp",
+                "Square.cpp",
+                "Rhombus.cpp",
+                "-o",
+                "shapes_app.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Build Shapes Project"
+        }
+    ]
+}
