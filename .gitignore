@@ -1,4 +1,4 @@
-# Compiled files
+# === Скомпилированные файлы ===
 *.exe
 *.o
 *.obj
@@ -6,21 +6,22 @@
 *.pdb
 *.ilk
 *.log
+*.manifest
+*.exp
+*.lib
 
-# Build directories
+# === Папки сборки ===
 build/
 bin/
 cmake-build-*/
+out/
+Debug/
+Release/
+x64/
+Win32/
+ipch/
 
-# VSCode user-specific files
-.vscode/settings.json
-.vscode/tasks.json
-.vscode/launch.json
-.vscode/*.pidb
-.vscode/*.sdf
-.vscode/*.opendb
-
-# Visual Studio files
+# === Visual Studio ===
 .vs/
 *.suo
 *.user
@@ -31,12 +32,34 @@ cmake-build-*/
 [Oo]bj/
 [Db]ebug/
 [Dr]elease/
+*.vcxproj.user
+*.vcxproj.filters
+*.vcxproj
+*.sln
+*.sdf
+*.opensdf
 
-# OS generated files
+# === VSCode ===
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/*.pidb
+.vscode/*.sdf
+.vscode/*.opendb
+# Остальные файлы VSCode можно оставить, если ты их не используешь
+
+# === ОС и временные файлы ===
 .DS_Store
 Thumbs.db
-
-# Temporary files
 *~
 *.bak
 *.swp
+
+# === Исключения: не игнорировать .vcxproj и .sln ===
+!.vcxproj
+!.sln
+
+# === Игнорировать старые папки без _new ===
+5HW_Multi_file_projects_and_libraries/5_1HW_my_math_project/
+5HW_Multi_file_projects_and_libraries/5_2HW_my_counter_project/
+5HW_Multi_file_projects_and_libraries/5_3HW_my_shapes_project/
