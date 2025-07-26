@@ -46,7 +46,6 @@ ipch/
 .vscode/*.pidb
 .vscode/*.sdf
 .vscode/*.opendb
-# Остальные файлы VSCode можно оставить, если ты их не используешь
 
 # === ОС и временные файлы ===
 .DS_Store
@@ -56,10 +55,5 @@ Thumbs.db
 *.swp
 
 # === Исключения: не игнорировать .vcxproj и .sln ===
-!.vcxproj
 !.sln
-
-# === Игнорировать старые папки без _new ===
-5HW_Multi_file_projects_and_libraries/5_1HW_my_math_project/
-5HW_Multi_file_projects_and_libraries/5_2HW_my_counter_project/
-5HW_Multi_file_projects_and_libraries/5_3HW_my_shapes_project/
+!*.vcxproj
